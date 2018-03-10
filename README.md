@@ -18,7 +18,7 @@ Simple *Python* module that allows converting a string into Morse code and vice 
 
 The definition above actually explains it all. Simple and easy to use.
 
-Furthermore, the module requires a shell that uses UTF-8 encoding, otherwise it will crash due to encoding errors.
+However, the module requires a shell that uses UTF-8 encoding, otherwise it will crash due to encoding errors.
 
 The code was written on *Linux* and has only been tested on that platform, yet.
 
