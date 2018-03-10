@@ -3,24 +3,24 @@
 
 # ============================================================================
 # ReMorse - Morse code encode/decode module
-# Copyright (C) 2017 by Ralf Kilian
+# Copyright (C) 2018 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
-# Website: http://www.urbanware.org
 # GitHub: https://github.com/urbanware-org/remorse
 # ============================================================================
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
-morse_alphabet = {"a" : "·−",    "b" : "−···",  "c" : "−·−·",  "d" : "−··",
-                  "e" : "·",     "f" : "··−·",  "g" : "−−·",   "h" : "····",
-                  "i" : "··",    "j" : "·−−−",  "k" : "−·−",   "l" : "·−··",
-                  "m" : "−−",    "n" : "−·",    "o" : "−−−",   "p" : "·−−·",
-                  "q" : "−−·−",  "r" : "·−·",   "s" : "···",   "t" : "−",
-                  "u" : "··−",   "v" : "···−",  "w" : "·−−",   "x" : "−··−",
-                  "y" : "−·−−",  "z" : "−−··",  "1" : "·−−−−", "2" : "··−−−",
-                  "3" : "···−−", "4" : "····−", "5" : "·····", "6" : "−····",
-                  "7" : "−−···", "8" : "−−−··", "9" : "−−−−·", "0" : "−−−−−"}
+MORSE_ALPHABET = {"a": "·−", "b": "−···", "c": "−·−·", "d": "−··",
+                  "e": "·", "f": "··−·", "g": "−−·", "h": "····",
+                  "i": "··", "j": "·−−−", "k": "−·−", "l": "·−··",
+                  "m": "−−", "n": "−·", "o": "−−−", "p": "·−−·",
+                  "q": "−−·−", "r": "·−·", "s": "···", "t": "−",
+                  "u": "··−", "v": "···−", "w": "·−−", "x": "−··−",
+                  "y": "−·−−", "z": "−−··", "1": "·−−−−", "2": "··−−−",
+                  "3": "···−−", "4": "····−", "5": "·····", "6": "−····",
+                  "7": "−−···", "8": "−−−··", "9": "−−−−·", "0": "−−−−−"}
+
 
 def get_version():
     """
@@ -35,7 +35,7 @@ def string2morse(string):
     """
     output = ""
 
-    while (" " * 2) in string:
+    while " " * 2 in string:
         string = string.replace((" " * 2), " ")
 
     for char in string.lower().strip():
@@ -43,9 +43,10 @@ def string2morse(string):
             output += (" " * 3)
             continue
         else:
-            output += morse_alphabet.get(char, "") + " "
+            output += MORSE_ALPHABET.get(char, "") + " "
 
     return output.strip()
+
 
 def morse2string(morse_code):
     """
@@ -56,13 +57,12 @@ def morse2string(morse_code):
     morse_code = \
         morse_code.replace(".", "·").replace("-", "−").replace("_", "−")
 
-    m = {v: k for k, v in morse_alphabet.items()}
+    morse = {v: k for k, v in MORSE_ALPHABET.items()}
     for word in morse_code.split(" " * 3):
         for letter in word.split(" "):
-            output += m.get(letter, "")
+            output += morse.get(letter, "")
         output += " "
 
     return output.strip()
 
 # EOF
-
