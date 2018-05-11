@@ -5,6 +5,7 @@
 *   [Details](#details)
 *   [Requirements](#requirements)
 *   [Usage](#usage)
+*   [Contact](#contact)
 
 ----
 
@@ -12,7 +13,7 @@
 
 Simple *Python* module that allows converting a string into Morse code and vice versa.
 
-[Top](#)
+[Top](#remorse)
 
 ## Details
 
@@ -24,16 +25,15 @@ The code was written on *Linux* and has only been tested on that platform, yet.
 
 Feel free to modify!
 
-[Top](#)
+[Top](#remorse)
 
 ## Requirements
-
 
 Notice that this module uses the *Python* 3.x framework. There is no official version for *Python* 2.x, but if you need that for whatever reason, you can try refactoring the syntax from *Python* 3.x to version 2.x using the *3to2* tool.
 
 However, there is no guarantee that this works properly or at all.
 
-[Top](#)
+[Top](#remorse)
 
 ## Usage
 
@@ -64,4 +64,12 @@ All other characters will be ignored. However, invalid characters inside a Morse
 
 No matter which characters you use, they will be converted into the UTF-8 ones and then decoded to get the string.
 
-[Top](#)
+[Top](#remorse)
+
+## Contact
+
+Any suggestions, questions, bugs to report or feedback to give?
+
+You can contact me by sending an email to <dev@urbanware.org>.
+
+[Top](#remorse)
