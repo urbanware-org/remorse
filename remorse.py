@@ -70,5 +70,3 @@ def morse2string(morse_code):
     return output.strip()
 
 # EOF
-
-print(morse2string("···· ·− ·−·· ·−·· −−−                                           ·−−− ··"))
