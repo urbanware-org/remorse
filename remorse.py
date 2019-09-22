@@ -64,6 +64,11 @@ def morse2string(morse_code):
             output += morse.get(letter, "")
         output += " "
 
+    while " " * 2 in output:
+        output = output.replace((" " * 2), " ")
+
     return output.strip()
 
 # EOF
+
+print(morse2string("···· ·− ·−·· ·−·· −−−                                           ·−−− ··"))
