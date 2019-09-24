@@ -11,7 +11,7 @@
 
 ## Definition
 
-Simple *Python* module that allows converting a string into Morse code and vice versa.
+Simple module for *Julia* and *Python* that allows converting a string into Morse code and vice versa.
 
 [Top](#remorse)
 
@@ -29,6 +29,12 @@ Feel free to modify!
 
 ## Requirements
 
+### *Julia*
+
+This module was written using *Julia* 1.1.0, but should also work with earlier and, of course, newer versions.
+
+### *Python*
+
 Notice that this module uses the *Python* 3.x framework. There is no official version for *Python* 2.x, but if you need that for whatever reason, you can try refactoring the syntax from *Python* 3.x to version 2.x using the *3to2* tool.
 
 However, there is no guarantee that this works properly or at all.
@@ -39,23 +45,23 @@ However, there is no guarantee that this works properly or at all.
 
 ### Encode a string into Morse code
 
-So, to convert the string "Hello" into Morse code, type:
+Supported characters are letters, numbers and spaces. All others will be ignored. The Morse code will be returned using UTF-8 characters.
+
+#### *Julia*
+
+```julia
+morse = string2morse("Hello")
+```
+
+#### *Python*
 
 ```python
 morse = remorse.string2morse("Hello")
 ```
 
-Supported characters are letters, numbers and spaces. All others will be ignored. The Morse code will be returned using UTF-8 characters.
-
 ### Decode Morse code into a string
 
-The other way around, to convert Morse code into a string, type:
-
-```python
-string = remorse.morse2string(".... . .-.. .-.. ---")
-```
-
-Notice that you can use different characters to enter the Morse code:
+You can use different characters to enter the Morse code:
 
 *   The dots can either be the ordinary ones (`.`) or the UTF-8 character `·`.
 *   The dashes can be hyphens (`-`), underscores (`_`) or the UTF-8 character `−`.
@@ -63,6 +69,18 @@ Notice that you can use different characters to enter the Morse code:
 All other characters will be ignored. However, invalid characters inside a Morse code letter will lead to an incorrect output.
 
 No matter which characters you use, they will be converted into the UTF-8 ones and then decoded to get the string.
+
+#### *Julia*
+
+```julia
+string = morse2string(".... . .-.. .-.. ---")
+```
+
+#### *Python*
+
+```python
+string = remorse.morse2string(".... . .-.. .-.. ---")
+```
 
 [Top](#remorse)
 
